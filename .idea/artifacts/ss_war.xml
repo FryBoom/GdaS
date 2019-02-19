@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ss:war">
+    <output-path>$PROJECT_DIR$/pinyougou-service/ss/target</output-path>
+    <root id="archive" name="sss-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ss:war exploded" />
+    </root>
+  </artifact>
+</component>
