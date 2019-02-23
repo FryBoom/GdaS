@@ -1,8 +1,7 @@
 package com.pinyougou.mapper;
 
-import tk.mybatis.mapper.common.Mapper;
-
 import com.pinyougou.pojo.Seller;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -12,5 +11,8 @@ import java.util.List;
  * @version 1.0
  */
 public interface SellerMapper extends Mapper<Seller>{
+
     List<Seller> findAll(Seller seller);
+
+    Seller find(String sellerId);
 }

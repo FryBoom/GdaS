@@ -79,4 +79,14 @@ public class SellerServiceImpl implements SellerService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Seller search1(String sellerId) {
+        return sellerMapper.find(sellerId);
+    }
+
+    @Override
+    public void save1(Seller seller) {
+        sellerMapper.updateByPrimaryKeySelective(seller);
+    }
 }

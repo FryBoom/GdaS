@@ -18,6 +18,17 @@ app.controller('sellerController', function($scope, $controller, baseService){
             });
     };
 
+    $scope.status=["待审核","已审核","审核未通过","关闭"]
+
+    $scope.click=function (sellerId) {
+        for(var i = 0;i< $scope.dataList.length;i++){
+            if(sellerId == $scope.dataList[i].sellerId){
+                $scope.seller = $scope.dataList[i];
+                break;
+            }
+        }
+    }
+
     /** 添加或修改 */
     $scope.saveOrUpdate = function(){
         var url = "save";

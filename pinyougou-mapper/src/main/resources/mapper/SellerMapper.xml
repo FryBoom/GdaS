@@ -19,4 +19,8 @@
 		</where>
 	</select>
 
+	<select id="find" resultType="Seller">
+		SELECT * FROM tb_seller WHERE seller_id=#{sellerId};
+	</select>
+
 </mapper>

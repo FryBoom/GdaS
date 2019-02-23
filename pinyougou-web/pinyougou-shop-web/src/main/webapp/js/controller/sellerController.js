@@ -55,4 +55,29 @@ app.controller('sellerController', function($scope, $controller, baseService){
             alert("请选择要删除的记录！");
         }
     };
+
+    /*查询资料（修改资料回显数据）*/
+    $scope.search1=function () {
+        /** 发送post请求 */
+         baseService.sendGet("/seller/sear?sellerId="+localStorage.getItem("loginName"))
+            .then(function (response) {
+                 $scope.data1=response.data;
+             });
+    };
+
+    /*修改资料*/
+    $scope.save1=function () {
+      /*  $scope.seller=localStorage.getItem("data1");*/
+        /** 发送post请求 */
+        baseService.sendPost("/seller/save1",$scope.data1)
+            .then(function (response) {
+                if(response.data){
+                    alert("保存成功")
+                    /** 重新加载数据 */
+                    $scope.reload();
+                }else {
+                    alert("操作失败")
+                }
+            });
+    }
 });

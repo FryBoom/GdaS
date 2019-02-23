@@ -4,6 +4,7 @@ app.controller('indexController',function ($scope,baseService) {
         baseService.sendGet("/showLoginName")
             .then(function (response) {
                 $scope.loginName = response.data.loginName;
+                localStorage.setItem("loginName",$scope.loginName);
             });
     };
 

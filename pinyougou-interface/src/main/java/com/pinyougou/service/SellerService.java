@@ -2,8 +2,9 @@ package com.pinyougou.service;
 
 import com.pinyougou.pojo.PageResult;
 import com.pinyougou.pojo.Seller;
-import java.util.List;
+
 import java.io.Serializable;
+import java.util.List;
 /**
  * SellerService 服务接口
  * @date 2019-01-11 09:25:16
@@ -33,4 +34,10 @@ public interface SellerService {
 	PageResult findByPage(Seller seller, int page, int rows);
 
     void updateStatus(String sellerId, String status);
+
+    /*根据商家登陆用户名查询商家信息*/
+    Seller search1(String sellerId);
+
+	/*保存资料*/
+	void save1(Seller seller);
 }

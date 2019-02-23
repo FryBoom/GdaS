@@ -31,7 +31,8 @@ public class SellerController {
         } catch (Exception e){
             e.printStackTrace();
         }
-        return sellerService.findByPage(seller,page,rows);
+        PageResult byPage = sellerService.findByPage(seller, page, rows);
+        return byPage;
     }
 
     @GetMapping("/updateStatus")
